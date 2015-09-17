@@ -9,11 +9,11 @@
   // at random spots. So let the forks
   // come, but sometimes there wont be forks,
   // but a single branch (from top to bottom).
-  // 
+  //
   // The branches are gonna have a little hole
   // in between or some other random position
   // through which pappu will need to pass.
-  // 
+  //
   // If it collides at some part other than
   // the hole, he'll decease.
 
@@ -92,7 +92,7 @@
 
       var forks = mit.ForkUtils.forks;
       /*var last_fork = forks[forks.length-1];
-      
+
       if (last_fork) {
 
         if (Math.abs(pos.x - last_fork.x) < 300) {
@@ -115,7 +115,7 @@
           count = this.count;
 
       if (branches.length < count) {
-      
+
         for (var i = 0; i < count - branches.length; i++) {
           var branch = new mit.Branch();
 
