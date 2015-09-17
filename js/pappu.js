@@ -60,18 +60,6 @@
 
     },
 
-    undoInvincible: function() {
-      this.invincible = 0;
-      this.invincibility_start = 0;
-      this.invincible_timer = 0;
-
-      mit.ui.invincible_timer.hide();
-
-      if(mit.nyanMode == 0){
-        this.sprite = mit.image.pappu;
-      }
-    },
-
     undoNyanMode: function(){
       this.pappuMode();
       mit.nyanMode = 0;
@@ -80,14 +68,6 @@
       mit.nyanBar = 0;
 
       this.changeMusic();
-    },
-
-    transformtoInvin: function(){
-      this.invincible = 1;
-      this.invincibility_start = new Date().getTime();
-      this.invincibility_time = 5000;
-      // Show timer
-      mit.ui.invincible_timer.show();
     },
 
     nyanInitSprite: function(){
@@ -107,29 +87,29 @@
       if(mit.nyanMode == 1){
         document.getElementById('start').pause();
         document.getElementById('nyanMusic').play();
-      } 
+      }
       else{
         document.getElementById('start').play();
         document.getElementById('nyanMusic').pause();
-      } 
+      }
     },
 
     draw: function(ctx) {
       var cur_sprite_frame = this.fly_frame_count / this.change_per_frame;
-      
+
       if (utils.isInt(cur_sprite_frame)) {
         var source_y= cur_sprite_frame * ((!mit.nyanMode) ? this.pappuHeight : this.nyanHeight);
-       
+
       }
 
       else {
-     
+
         // Ultra smooth animations
         var old_sprite_frame = parseInt(this.fly_frame_count/this.change_per_frame)
         var source_y= old_sprite_frame * ((!mit.nyanMode) ? this.pappuHeight : this.nyanHeight);
 
       }
-      
+
       // console.log(cur_sprite_frame, source_x);
 
       // Rotation on Flying
@@ -181,7 +161,7 @@
       if (mit.nyanMode){
           mit.nyanBar = mit.nyanBar - 1;
           $("#nyan_score").attr("value", mit.nyanBar);
-          if (mit.nyanBar == 0) this.undoNyanMode(); 
+          if (mit.nyanBar == 0) this.undoNyanMode();
       }
 
       ctx.drawImage(
@@ -201,7 +181,7 @@
 
     drawStatic: function(ctx) {
       var cur_sprite_frame = this.fly_frame_count / this.change_per_frame;
-      
+
       if (utils.isInt(cur_sprite_frame)) {
         var source_y = cur_sprite_frame * ((!mit.nyanMode) ? this.pappuHeight : this.nyanHeight);
       }
@@ -228,7 +208,7 @@
         this.w,
         60
       );*/
-      
+
       ctx.drawImage(
         this.sprite,
         0,
@@ -325,7 +305,7 @@
       // super optimization :P
       if (!self.clones.length)
         return;
-      
+
       var branches = mit.BranchUtils.branches;
       var forks = mit.ForkUtils.forks;
       var pakias = mit.PakiaUtils.pakias;

@@ -101,7 +101,7 @@
         this.y
       );
     };
-  
+
     this.drawNyan = function(ctx) {
       ctx.drawImage(
         mit.CollectibleUtils.nyan_img,
@@ -282,16 +282,12 @@
             mit.Pappu.createClones(3);
             break;
 
-          case 'invincible':
-              mit.Pappu.transformtoInvin();
-            break;
-
           case 'nyan':
             mit.nyanBar = $("#nyan_score").attr("value");
 
               mit.nyanBar += RAINBOW_POINTS;
               $("#nyan_score").attr("value", mit.nyanBar);
-          
+
             if (mit.nyanBar >= MAX_RAINBOW_POINTS && mit.nyanMode == 0){
               mit.Pappu.nyanInitSprite();
               mit.nyanScore = 0;
