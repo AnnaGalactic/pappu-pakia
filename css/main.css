@@ -100,6 +100,7 @@ h1, #loadText {
 	width: auto;
 	max-width: 1000px;
 	height: 500px;
+	zoom: .7;
 }
 
 footer {
