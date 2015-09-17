@@ -31,7 +31,7 @@
 
     init: function(ctx) {
       // Sky Gradient
-      this.sky_gradient = ctx.createLinearGradient(0, 0, 0, mit.H);  
+      this.sky_gradient = ctx.createLinearGradient(0, 0, 0, mit.H);
       this.sky_gradient.addColorStop(0, '#06c4f4');
       this.sky_gradient.addColorStop(1, '#7bd4f6');
 
@@ -103,7 +103,7 @@
         this.backtree_bg_move_speed = 3;
         this.fronttree_bg_move_speed = 5;
         this.ground_bg_move_speed = 7;
-        
+
         this.combined_bg_move_speed = 3;
     },
 
@@ -193,7 +193,7 @@
 
     drawFrontTrees: function(ctx) {
       var fronttree_bg_vx_abs = Math.abs(this.fronttree_bg_vx);
- 
+
       // fixing weird indexSizeError bugs for the most nonsensical browsers - opera and IE
       try {
         ctx.drawImage(
@@ -432,7 +432,7 @@
 
 
         if (mit.nyanMode !=1){
-          this.drawClouds(ctx);        
+          this.drawClouds(ctx);
           // Back Small Trees
           this.drawBackTrees(ctx);
           // Front Big Trees
