@@ -60,6 +60,25 @@
 
     },
 
+    addInvincibility: function(){
+      this.invincible = 1;
+      this.invincibility_start = new Date().getTime();
+      this.invincibility_time = 5000;
+      mit.ui.invincible_timer.show();
+    },
+
+    removeInvincibility: function() {
+      this.invincible = 0;
+      this.invincibility_start = 0;
+      this.invincible_timer = 0;
+
+      mit.ui.invincible_timer.hide();
+
+      if(mit.nyanMode == 0){
+        this.sprite = mit.image.pappu;
+      }
+    },
+
     undoNyanMode: function(){
       this.pappuMode();
       mit.nyanMode = 0;
@@ -151,7 +170,7 @@
         var timer_progress = (time_diff/this.invincibility_time) * 100;
 
         if (timer_progress > 100)
-          this.undoInvincible();
+          this.removeInvincibility();
         else
           mit.ui.invincible_loader.css('width', timer_progress + '%');
 

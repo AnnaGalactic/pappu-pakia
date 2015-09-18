@@ -82,7 +82,7 @@ mit.main = function() {
   var music = document.getElementById("start");
   var music2 = document.getElementById("nyanMusic");
   music.volume = 0.2;
-  
+
   var isMute = false;
 
   // Mute the game if button is clicked
@@ -198,7 +198,7 @@ mit.main = function() {
 
   // Velocity cap on either sides of the
   // number system.
-  // 
+  //
   // You can console.log velocities in drawing methods
   // and from there decide what to set as the cap.
   mit.v_cap = 6.5;
@@ -268,7 +268,7 @@ mit.main = function() {
     // Space || Enter
     if (e.keyCode === 32 || e.keyCode === 13) {
       startGame();
-      
+
       e.preventDefault();
     }
 
@@ -315,7 +315,7 @@ mit.main = function() {
     mit.start_btn_clicked = 0;
 
     // Pappu if invincible will be no morez
-    mit.Pappu.undoInvincible();
+    mit.Pappu.removeInvincibility();
     mit.Pappu.undoNyanMode();
 
     // Nuke all clones
@@ -416,7 +416,7 @@ mit.main = function() {
 
       // Acceleration + Gravity
       // mit.ay = mit.ay + mit.gravity;
-      
+
       // Velocity
       if (!mit.game_over) {
         if (
@@ -443,7 +443,7 @@ mit.main = function() {
         mit.vy += mit.gravity;
         mit.Pappu.y += mit.vy;
       }
-    
+
       mit.Pappu.draw(ctx);
     }
     else {

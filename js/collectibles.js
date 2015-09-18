@@ -273,7 +273,6 @@
         collec.sound.play();
         // Determine type and perform action accordingly
         switch (collec.type) {
-
           case 'coin':
             mit.score += collec.sub_type;
             break;
@@ -282,11 +281,15 @@
             mit.Pappu.createClones(3);
             break;
 
+          case 'invincible':
+            mit.Pappu.addInvincibility();
+            break;
+
           case 'nyan':
             mit.nyanBar = $("#nyan_score").attr("value");
 
-              mit.nyanBar += RAINBOW_POINTS;
-              $("#nyan_score").attr("value", mit.nyanBar);
+            mit.nyanBar += RAINBOW_POINTS;
+            $("#nyan_score").attr("value", mit.nyanBar);
 
             if (mit.nyanBar >= MAX_RAINBOW_POINTS && mit.nyanMode == 0){
               mit.Pappu.nyanInitSprite();
